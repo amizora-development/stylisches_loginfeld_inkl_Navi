@@ -1,0 +1,357 @@
+:root {
+    --background-color: #33383f;
+    --darker-background-color: #243848;
+    --accent-color: rgb(0, 94, 255);
+    --text-color: #ffffff;
+    --navbar-height: 80px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background: radial-gradient(#33383f, rgb(42, 47, 53));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+/* == Navigation beginnt hier == */
+nav {
+    height: var(--navbar-height);
+    background: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 5px 2px rgb(76, 101, 141);
+}
+nav .logo {
+    margin-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-variant: small-caps;
+    text-decoration: none;
+    border-bottom: 2px solid whitesmoke;
+}
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+nav li {
+    height: 100%;
+    color: var(--text-color);
+    width: 150px;
+    text-align: center;
+    position: relative;
+}
+
+nav li:hover {
+    border-bottom: 2px solid rgb(32, 85, 219);
+    box-shadow: 0px 4px 0px rgb(0, 183, 255);
+}
+
+nav ul a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.dropdown {
+    height: min-content;
+    width: 200px;
+    background: var(--background-color);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: var(--navbar-height);
+}
+.dropdown li {
+    height: 70px;
+    width: 100%;
+}
+.dropdown li a {
+    justify-content: flex-start;
+    padding-left: 30px;
+    width: calc(100% - 30px);
+}
+nav li:hover .dropdown {
+    display: flex;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+.expandable_li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle_button {
+    width: 30px;
+    height: 23px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bar {
+    height: 4px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 100px;
+}
+@media(max-width: 850px) {
+    .toggle_button {
+        display: flex;
+    }
+    nav ul {
+        height: min-content;
+        width: 100%;
+        background: var(--background-color);
+        display: none;
+        position: absolute;
+        top: var(--navbar-height);
+    }
+    nav li {
+        height: min-content;
+        width: 100%;
+    }
+    nav ul a {
+        padding: 30px 0;
+    }
+    .expandable_li {
+        display: block;
+    }
+    .expandable_li label {
+        padding: 30px 0;
+        cursor: pointer;
+        display: block;
+    }
+    .expandable_li:hover .dropdown {
+        display: none;
+    }
+    .expandable_li input[type="checkbox"]:checked~.dropdown {
+        display: block;
+    }
+    .dropdown {
+        position: static;
+        width: 100%;
+    }
+    .dropdown li {
+        padding: 0;
+        display: block;
+        position: static;
+        background: var(--darker-background-color);
+    }
+    .dropdown li a {
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    #toggle_button:checked~ul {
+        display: block;
+    }
+}
+/* == Navigation endet hier == */
+/* == Formular/Anmeldung beginnt hier == */
+#wrapper {
+    display: flex;
+    justify-content: center;
+}
+form {
+    height: 575px;
+    width: 500px;
+    padding: 5px;
+    margin: 100px auto;
+    border-radius: 8px;
+    background-color: #222831;
+    box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.404);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#anrede {
+    background-color: var(--background-color);
+}
+.textlist {
+    margin-left: 2em;
+    padding: 1.5em 0;
+}
+img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 6px 2px rgb(39, 39, 53);
+    border-radius: 8px;
+}
+
+figure {
+    margin: 0;
+}
+figcaption {
+    color: gray;
+    font-size: small;
+    margin-bottom: 3em;
+}
+.active {
+    font-weight: bold;
+    font-size: larger;
+    border-bottom: 2px solid #fff;
+}
+.post {
+    margin: 4em;
+    padding-bottom: 3rem;
+    font-size: 20px;
+    line-height: 1.4;
+}
+.post_info {
+    background-color: #222831;
+    padding: 1em 1.5em;
+    border-radius: 0.5em;
+}
+.post_ueb {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+h1 {
+    color: var(--text-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 38px;
+    background-image: linear-gradient(to right, rgb(0, 162, 255), rgb(30, 15, 236));
+    background-size: 100% 4px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    line-height: 60px;
+}
+.inputs_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.field {
+    width: 100%;
+    outline: none;
+    font-size: 1em;
+    background-color: var(--background-color);
+}
+textarea {
+    min-height: 150px;
+}
+input {
+    height: 64px;
+    width: 240px;
+    margin: 15px;
+    padding: 0px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: #373e49;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.212);
+    color: var(--text-color);
+    font-size: 20px;
+    transition: 0.2s;
+}
+input:hover,
+input:focus {
+    background-color: #47505f;
+}
+input:focus {
+    outline: none;
+    width: 265px;
+}
+input::placeholder {
+    color: rgb(152, 153, 173);
+}
+.login,
+.regist {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(163, 165, 195);
+    text-decoration: none;
+    font-size: 16px;
+}
+.login:hover,
+.login:focus,
+.regist:hover,
+.regist:focus {
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+button {
+    height: 55px;
+    width: 180px;
+    border-radius: 100px;
+    border: none;
+    color: whitesmoke;
+    font-family: sans-serif;
+    font-size: 22px;
+    background: linear-gradient(to right, rgb(0, 162, 255), rgb(30, 15, 236));
+    transition: 0.2s;
+}
+
+button:hover {
+    width: 200px;
+    font-size: larger;
+}
+
+button:focus {
+    outline: none;
+    width: 200px;
+}
+@media(max-width: 655px) {
+    form {
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .inputs_container {
+        margin: 80px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 100%;
+    }
+
+    .post {
+        display: block;
+    }
+
+    .callout {
+        padding: 0.3rem;
+    }
+
+    .post_info {
+        margin-top: 1em;
+        padding-top: 0;
+    }
+}
+/* == Formular/Anmeldung beginnt hier == */
+
+
+
+

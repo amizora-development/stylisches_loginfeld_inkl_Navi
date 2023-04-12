@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung</title>
+    <link rel="stylesheet" href="css/style.css ">
+</head>
+
+<body>
+
+    <nav>
+        <a class="logo" href="#">Logo</a>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+    
+        <ul>
+            <li><a href="#">Startseite</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Service</label>
+                <ul class="dropdown">
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link</a></li>
+                </ul>
+            </li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="login.html" class="active">Anmelden</a></li>
+    
+        </ul>
+    </nav>
+
+    <!-- <div id="wrapper" class="wrap"> -->
+    <form>
+        <h1>Anmeldung</h1>
+            <div class="inputs_container">
+                <input type="text" placeholder="Name">
+                <input type="password" placeholder="Passwort">
+                <a class="login" href="registration.html">Zur Registrierung</a>
+            </div>
+        <button>Senden</button>
+    </form>
+    
+</body>
+</html>
